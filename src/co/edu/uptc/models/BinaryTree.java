@@ -43,20 +43,19 @@ public class BinaryTree<T> {
       return aux;
    }
 
-   public ArrayList showSortData(){
+   public ArrayList<T> showSortData(){
       return recursive(root);
    }
 
-   private  ArrayList recursive(Node<T> aux){
+   private  ArrayList<T> recursive(Node<T> aux){
       
-      if (aux.getHigher()!= null) 
-         recursive(aux.getHigher());
+      if(aux.getLower()!=null)
+         recursive(aux.getLower());
 
          list.add(aux.getInfo());
 
-      if(aux.getLower()!=null){
-         recursive(aux.getLower());
-      }
+      if (aux.getHigher()!= null) 
+         recursive(aux.getHigher());
       
       return list;
    }
